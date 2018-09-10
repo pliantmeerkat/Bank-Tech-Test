@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import sun.applet.Main;
 
-class MainTest {
+class MainTest { 
 
 	@BeforeEach()
 	void initialize() {
