@@ -14,7 +14,7 @@ To Install this project simply clone or fork the repository, then build the proj
 
 ### Testing
 
-The testing for this project is done entirely in Junit 5, to run the test suite simple set your run configuration to JUnit in your ide and then run the program, you should get an output with all tests passing. I have included a *Main.java* file with the project in case your ide complains about the program lacking a main class, but it is empty and can be igored when reviewing the submission.
+The testing for this project is done entirely in Junit 5, to run the test suite simple set your run configuration to JUnit in your ide and then run the program, you should get an output with all tests passing. I have included a *Main.java* file with the project in case your ide complains about the program lacking a main class, but it is empty and can be igored when reviewing the submission. Total coverage for the submission stands at 100%, however it currently shows 92.8% in my ide due to the coverage system tracking my test files in additional to the files in lib, and because there are no tests for the Main.java file as it is unused.
 
 ## Usage
 
