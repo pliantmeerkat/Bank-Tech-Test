@@ -103,10 +103,10 @@ class BankAccountTest {
 		processTestExamplePayment();
 		testDate = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
 		String testOutputString = (
-				"Date || Payment Amount || Balance\n"  +
-				testDate + " || -500.00 || 2500.00\n" +
-				testDate + " || 2000.00 || 3000.00\n"   +
-				testDate + " || 1000.00 || 1000.00\n"
+				"date || credit || debit || balance\n"  +
+				testDate + " || || 500.00 || 2500.00\n" +
+				testDate + " || 2000.00 || || 3000.00\n"   +
+				testDate + " || 1000.00 || || 1000.00\n"
 		);
 		assertEquals(testOutputString, testAccount.printStatement());
 	}

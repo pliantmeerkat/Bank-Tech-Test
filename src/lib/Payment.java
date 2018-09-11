@@ -13,7 +13,7 @@ public class Payment {
 		this.paymentAmount = paymentAmount;
 		this.paymentDate = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
 		verifyPayment(payerBalance);
-	}
+	} 
 	
 	public void verifyPayment(float payerBalance) {
 		if(this.paymentAmount > payerBalance) {

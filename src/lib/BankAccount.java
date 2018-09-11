@@ -29,18 +29,14 @@ public class BankAccount {
 			log.warning("invalid Payment: Your account has not been charged");
 			throw e;
 		}	
-	}
+	} 
 	
-	private void makePayment(float paymentAmount) {
-		this.paymentHistory.add(new Payment(paymentAmount, this.balance));	
-	}
-	 
 	public String printStatement() {
-		String output = "Date || Payment Amount || Balance\n";
+		String output = "date || credit || debit || balance\n";
 		Collections.reverse(paymentHistory);
 		for(Payment payment: paymentHistory) {
 			output += payment.paymentDate + " || " +
-				      String.format("%.2f", (0 - payment.paymentAmount)) + " || " +
+				      writeCreditOrDebit(payment.paymentAmount) +
 				      String.format("%.2f", payment.postTransactionBalance) + "\n";
 		}
 		System.out.println(output);
@@ -48,4 +44,15 @@ public class BankAccount {
 		return output;
 	} 
 	
+	private void makePayment(float paymentAmount) {
+		this.paymentHistory.add(new Payment(paymentAmount, this.balance));	
+	}
+	
+	private String writeCreditOrDebit(float paymentAmount) {
+		if(paymentAmount > 0) {
+			return "|| " + String.format("%.2f", ( paymentAmount)) + " || ";
+		} else {
+			return String.format("%.2f", (0 -  paymentAmount)) + " || || ";
+		}
+	}
 }
