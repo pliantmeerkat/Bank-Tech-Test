@@ -9,11 +9,11 @@ public class BankAccount {
 	
 	private static final Logger log = Logger.getLogger(BankAccount.class.getName());
 	public float balance;
-	public List<Payment> paymentHistory;
+	public final List<Payment> paymentHistory;
 	
 	public BankAccount() {
 		this.balance = 0.00f;
-		this.paymentHistory = new ArrayList<Payment>();
+		this.paymentHistory = new ArrayList<>();
 	}
 	
 	public void deposit(float paymentAmount) {
