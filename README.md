@@ -36,6 +36,10 @@ Within your Ide console you should now see the following output:
 
 More infomation about BeanShell can be found [here](http://www.beanshell.org/home.html)
 
+## A note on Public vs Private
+
+I have decided to largely omit private object specifiers from this project, this is because I have found private methods/ objects to be extremely challenging to test effectivly. In addition to this, as this submission is intended as a test excersise, not as an actual payment/ accounts system intended for real world usage, it seemed lpogical to make all significant objects public to allow for simpler and more effective testing throughout the project.
+
 ## Credits
 
 - Makers Academy: Original project idea

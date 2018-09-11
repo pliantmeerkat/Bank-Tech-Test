@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class BankAccount {
 	
-	private final static Logger log = Logger.getLogger(BankAccount.class.getName());
+	private static final Logger log = Logger.getLogger(BankAccount.class.getName());
 	public float balance;
 	public List<Payment> paymentHistory;
 	
