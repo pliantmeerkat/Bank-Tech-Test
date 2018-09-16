@@ -90,16 +90,4 @@ class BankAccountTest {
 		makeUnsucessfulWithdrawl(badTestPaymentAmount);
 		assertEquals(0, testAccount.numPayments());
 	}
-	
-	// output Tests
-	@Test
-	void bankAccountPrintsTestExamplePayment() {
-		testDate = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
-		testAccount.deposit(500);
-		String testOutputString = (
-				"date || credit || debit || balance\n"  +
-				testDate + " || 500.00 || || 500.00\n"
-		);
-		assertEquals(testOutputString, testAccount.printStatement());
-	}
 }

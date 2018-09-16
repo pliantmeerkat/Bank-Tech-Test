@@ -37,27 +37,11 @@ public class BankAccount {
 	}
 	
 	public String printStatement() {
-		String output = "date || credit || debit || balance\n";
-		Collections.reverse(paymentHistory);
-		for(Payment payment: paymentHistory) {
-			output += payment.paymentDate + " || " +
-				      writeCreditOrDebit(payment.paymentAmount) +
-				      String.format("%.2f", payment.postTransactionBalance) + "\n";
-		}
-		System.out.println(output);
-		Collections.reverse(paymentHistory); // set back to normal
-		return output;
+		return PrintProcessor.printStatement(this.paymentHistory);
 	} 
 	
 	private void makePayment(float paymentAmount) {
 		this.paymentHistory.add(new Payment(paymentAmount, this.balance));	
 	}
 	
-	private String writeCreditOrDebit(float paymentAmount) {
-		if(paymentAmount > 0) {
-			return "|| " + String.format("%.2f", ( paymentAmount)) + " || ";
-		} else {
-			return String.format("%.2f", (0 -  paymentAmount)) + " || || ";
-		}
-	}
 }
