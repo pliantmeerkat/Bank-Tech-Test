@@ -1,15 +1,19 @@
 package lib;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+
 import java.util.List;
 
 public class PrintProcessor {
-	
+
 	public static String printStatement(List<Payment>paymentHistory) {
+		String dateString;
 		String output = "date || credit || debit || balance\n";
 		Collections.reverse(paymentHistory);
 		for(Payment payment: paymentHistory) {
-			output += payment.paymentDate + " || " +
+			dateString = new SimpleDateFormat("yyyy/MM/dd").format(payment.paymentDate);
+			output += dateString + " || " +
 				      writeCreditOrDebit(payment.paymentAmount) +
 				      String.format("%.2f", payment.postTransactionBalance) + "\n";
 		}

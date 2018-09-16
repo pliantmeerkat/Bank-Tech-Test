@@ -1,8 +1,6 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -13,7 +11,7 @@ import lib.Payment;
 class PaymentTest {
 	
 	private Payment testPayment;
-	private String testDate;
+	private Date testDate;
 	private float testAmount = 500;
 	private float goodPayerBalance = 1000;
 	private float badPayerBalance = 200;
@@ -21,7 +19,7 @@ class PaymentTest {
 	
 	@BeforeEach
 	void initialize() {
-		testDate = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+		testDate = new Date();
 		paymentDoesNotThrowErrorWhenValidAmount(); // in case of exception thrown improperly
 	}
 	

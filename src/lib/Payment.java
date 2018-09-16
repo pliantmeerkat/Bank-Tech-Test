@@ -1,17 +1,16 @@
 package lib;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Payment {
 
-	public String paymentDate;
+	public Date paymentDate;
 	public float paymentAmount;
 	public float postTransactionBalance;
 	
 	public Payment(float paymentAmount, float payerBalance) {
 		this.paymentAmount = paymentAmount;
-		this.paymentDate = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+		this.paymentDate = new Date();
 		verifyPayment(payerBalance);
 	} 
 	

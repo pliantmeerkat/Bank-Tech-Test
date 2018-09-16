@@ -1,10 +1,6 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +9,6 @@ import lib.BankAccount;
 
 class BankAccountTest {
 	 
-	private String testDate;
 	private float depositAmount = 50.25f;
 	private float testBalance = 700.55f;
 	private float goodTestPaymentAmount = 500;

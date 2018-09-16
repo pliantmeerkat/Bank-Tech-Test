@@ -1,7 +1,6 @@
 package lib;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -10,7 +9,6 @@ public class BankAccount {
 	private static final Logger log = Logger.getLogger(BankAccount.class.getName());
 	public float balance;
 	private final List<Payment> paymentHistory;
-	
 	
 	public BankAccount() {
 		this.balance = 0.00f;
