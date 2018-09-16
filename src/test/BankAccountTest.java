@@ -19,12 +19,6 @@ class BankAccountTest {
 	private float goodTestPaymentAmount = 500;
 	private float badTestPaymentAmount = 1000;
 	private BankAccount testAccount;
-	
-	void processTestExamplePayment() {
-		testAccount.deposit(1000);
-		testAccount.deposit(2000);
-		testAccount.withdraw(500);
-	}
 
 	void makeSucessfulestWithdrawl(float testPaymentAmount) {
 		try {
@@ -57,7 +51,7 @@ class BankAccountTest {
 	
 	@Test
 	void bankAccountHasEmptyArrayForHistory() {
-		assertEquals(0, testAccount.paymentHistory.size());
+		assertEquals(0, testAccount.numPayments());
 	}
 	
 	// post account creation tests with good balance
@@ -80,7 +74,7 @@ class BankAccountTest {
 	void bankAccountAddsPaymentToHistory() {
 		testAccount.balance = testBalance;
 		makeSucessfulestWithdrawl(goodTestPaymentAmount);
-		assertEquals(1, testAccount.paymentHistory.size());
+		assertEquals(1, testAccount.numPayments());
 	}
 	
 	// bad payment tests
@@ -94,19 +88,17 @@ class BankAccountTest {
 	@Test
 	void bankAccountPaymentHistoryIsNotChangedByBadPayment() {
 		makeUnsucessfulWithdrawl(badTestPaymentAmount);
-		assertEquals(0, testAccount.paymentHistory.size());
+		assertEquals(0, testAccount.numPayments());
 	}
 	
 	// output Tests
 	@Test
 	void bankAccountPrintsTestExamplePayment() {
-		processTestExamplePayment();
 		testDate = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+		testAccount.deposit(500);
 		String testOutputString = (
 				"date || credit || debit || balance\n"  +
-				testDate + " || || 500.00 || 2500.00\n" +
-				testDate + " || 2000.00 || || 3000.00\n"   +
-				testDate + " || 1000.00 || || 1000.00\n"
+				testDate + " || 500.00 || || 500.00\n"
 		);
 		assertEquals(testOutputString, testAccount.printStatement());
 	}

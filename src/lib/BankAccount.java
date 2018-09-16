@@ -9,7 +9,8 @@ public class BankAccount {
 	
 	private static final Logger log = Logger.getLogger(BankAccount.class.getName());
 	public float balance;
-	public final List<Payment> paymentHistory;
+	private final List<Payment> paymentHistory;
+	
 	
 	public BankAccount() {
 		this.balance = 0.00f;
@@ -30,6 +31,10 @@ public class BankAccount {
 			throw e;
 		}	
 	} 
+	
+	public int numPayments() {
+		return paymentHistory.size();
+	}
 	
 	public String printStatement() {
 		String output = "date || credit || debit || balance\n";
